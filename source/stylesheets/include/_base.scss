@@ -1,0 +1,24 @@
+body{
+    color: $base-color;
+    background: $base-bg-coler;
+    font-size: $base-font-size;
+    font-family: #{$base-font-family};
+    line-height: $base-line-height;
+}
+a {
+    color: $base-link-color;
+    text-decoration: none;
+    &:hover{
+    	text-decoration: underline;
+    }
+}
+img {
+    vertical-align: top;
+}
+label {
+    cursor: pointer;
+}
+ul,
+li{
+    list-style: none;
+}

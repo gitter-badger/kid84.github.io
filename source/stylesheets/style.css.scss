@@ -1,0 +1,26 @@
+@import 'compass';
+@import './include/normalize';
+@import './include/setting';
+@import './include/base';
+@import './include/layout';
+// @import './include/module';
+// @import 'plugin/button';
+//@import './plugin/zurui';
+@mixin zurui-box($shadow:0.15){
+	@include box-shadow(rgba(0,0,0,$shadow)0 0 2px);
+}
+.container{
+	width: 960px;
+	margin: 0 auto;
+	margin-top: 10px;
+	padding: 10px;
+	// @include zurui-box;
+	@include box-sizing(border-box);
+}
+h1{
+	font-size: 30px;
+}
+h2{
+	border-left: 5px solid #666;
+	padding-left: 5px;
+}
