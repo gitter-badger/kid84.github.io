@@ -115,5 +115,5 @@ activate :autoprefixer, browsers: ['last 2 versions', 'ie 9']
 activate :deploy do |deploy|
   # deploy.build_before = true
   deploy.method = :git
-  deploy.branch = "blog"
+  deploy.branch = "master"
 end 
