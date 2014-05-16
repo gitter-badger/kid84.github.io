@@ -5,17 +5,16 @@
     <meta charset="utf-8" />
     <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
     <meta content='width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0' name='viewport'>
-    <title>kid84 blog<%= ' - ' + current_article.title unless current_article.nil? %></title>
+    <title>kid84 blog test<%= ' - ' + current_article.title unless current_article.nil? %></title>
     <%= feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
     <script src="javascripts/jquery-2.1.0.min.js"></script>
     <script src="javascripts/script.js"></script>
     <link rel="stylesheet" href="stylesheets/style.css">
   </head>
   <body>
-
     <div class="container">
       <header>
-        <h1>kid84 blog test</h1>
+        <h1>kid84 blog</h1>
         <nav>
           <ul>
             <li><a href="/">home</a></li>
