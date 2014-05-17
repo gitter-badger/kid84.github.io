@@ -4,6 +4,8 @@ body{
     font-size: $base-font-size;
     font-family: #{$base-font-family};
     line-height: $base-line-height;
+    width: 100%;
+    border-top: 5px solid $point-color;
 }
 a {
     color: $base-link-color;

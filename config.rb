@@ -7,13 +7,14 @@ Time.zone = "Tokyo"
 
 activate :blog do |blog|
   # This will add a prefix to all links, template references and source paths
+  Time.zone = "Tokyo"
   blog.prefix = "blog"
 
-  blog.permalink = "{year}/{month}/{day}/{title}.html"
+  blog.permalink = "{year}-{month}-{day}-{title}.html"
   # Matcher for blog source files
   # blog.sources = "{year}-{month}-{day}-{title}.html"
   blog.taglink = "tags/{tag}.html"
-  blog.layout = "layout"
+  blog.layout = "layouts/post"
   # blog.summary_separator = /(READMORE)/
   # blog.summary_length = 250
   # blog.year_link = "{year}.html"
@@ -115,5 +116,6 @@ activate :autoprefixer, browsers: ['last 2 versions', 'ie 9']
 activate :deploy do |deploy|
   # deploy.build_before = true
   deploy.method = :git
-  deploy.branch = "master"
+  deploy.branch = "gh-pages"
+  # deploy.branch = "master"
 end 
