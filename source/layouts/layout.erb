@@ -8,6 +8,7 @@
     <title>kid84 blog test<%= ' - ' + current_article.title unless current_article.nil? %></title>
     <%= feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
     <script src="javascripts/jquery-2.1.0.min.js"></script>
+    <script src="javascripts/processing.js"></script>
     <script src="javascripts/script.js"></script>
     <link rel="stylesheet" href="stylesheets/style.css">
   </head>
@@ -44,5 +45,8 @@
         </ol>
       </aside> -->
     </div>
+    <!-- <div id="canvasContainer">
+      <canvas data-processing-sources="javascripts/20140518.pjs"></canvas>
+    </div> -->
   </body>
 </html>
