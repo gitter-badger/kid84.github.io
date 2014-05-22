@@ -9,6 +9,11 @@
 @mixin zurui-box($shadow:0.15){
 	@include box-shadow(rgba(0,0,0,$shadow)0 0 2px);
 }
+%clearfix:after {
+  content: "";
+  clear: both;
+  display: block;
+}
 .container{
 	width: 960px;
 	margin: 0 auto;
@@ -30,4 +35,16 @@ h2{
 	margin: 0;
 	overflow: hidden;
 	position: fixed;
+}
+
+//blog
+.post{
+	@extend %clearfix:after;
+	@include box-sizing(border-box);
+	@include border-radius(4px);
+	@include zurui-box;
+	margin-bottom: 20px;
+	padding: 20px;
+	width: 100%;
+	background: #fff;
 }
