@@ -1,0 +1,27 @@
+//header
+header{
+	@include clearfix;
+	h1{
+		float: left;
+	}
+	nav{
+		float: right;
+		ul{
+			@include clearfix;
+			li{
+				float: left;
+				margin: 0 10px;
+				a{
+					color: $base-color;
+					font-size: 18px;
+					@include transition-property(all);
+  					@include transition-duration(.3s);
+  					&:hover{
+  						color: $base-link-color;
+  						text-decoration: none;
+  					}
+				}
+			}
+		}
+	}
+}

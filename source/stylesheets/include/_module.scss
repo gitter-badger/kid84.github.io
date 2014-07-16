@@ -1,0 +1,72 @@
+//mixin
+@mixin line (){
+	border-bottom: 1px solid rgba(0,0,0,.2);
+	@include box-shadow(rgba(255,255,255,.3)0 1px 0);
+}
+
+@mixin line-top($black:.1,$white:.5){
+	border-top: 1px solid rgba(0,0,0,$black);
+	@include box-shadow(rgba(255,255,255,$white)0 1px 0 inset);
+}
+@mixin line-left($black:.1,$white:.5){
+	border-top: 1px solid rgba(0,0,0,$black);
+	@include box-shadow(rgba(255,255,255,$white)-1px 0 0);
+}
+@mixin line-right($black:.1,$white:.5){
+	border-top: 1px solid rgba(0,0,0,$black);
+	@include box-shadow(rgba(255,255,255,$white) -1px 0 0 inset);
+}
+@mixin line-bottom($black:.1,$white:.5){
+	border-top: 1px solid rgba(0,0,0,$black);
+	@include box-shadow(rgba(255,255,255,$white)0 1px 0);
+}
+
+//text-shadow
+@mixin ts-000($op:.2){
+	text-shadow: 1px -1px rgba(0,0,0,$op);
+}
+@mixin ts-fff($op:.5){
+	text-shadow: -1px 1px rgba(0,0,0,$op);
+}
+
+//box-shadow
+@mixin zurui-box($shadow:0.15){
+	@include box-shadow(rgba(0,0,0,$shadow)0 0 2px);
+}
+@mixin deboss-box($border:.1,$shadow:.05,$highlighgt:.8){
+	border: 1px solid rgba(0,0,0,$border);
+	@include box-shadow(rgba(0,0,0,$shadow)-1px 1px 2px inset,rgba(255,255,255,$highlight)-1px 1px 0);
+}
+@mixin emboss-box($border:.1,$shadow:0.05,$highlight:.5){
+	border: 1px solid rgba(0,0,0,$border);
+	@include box-shadow(rgba(0,0,0,$shadow)-1px 1px 0,rgba(255,255,255,$highlight)-1px 1px 0 inset);
+}
+
+//ballon
+@mixin balloon-left($size:6px,$color:#fff,$top:6px){
+	position: relative;
+	&:after{
+		position: absolute;
+		content:'';
+		display: block;
+		border-style: $size solid transparent;
+		border-right: $size solid $color;
+		top: $top;
+		left: -1*$size*2;
+	}
+}
+@mixin ballon-left-border($size:6px,$color:#fff,$top:6px,$border-color:#ccc,$border:1px){
+	position: relative;
+	$size2:$size+$border;
+	@include ballon-left($size,$color,$top);
+	&:before{
+		position: absolute;
+		content:'';
+		display: block;
+		border-style: solid $size2 transparent;
+		border-right: $size2 solid $border-color;
+		top:$top-$border;
+		left:-1*$size2*2;
+	}
+}
+//extend
