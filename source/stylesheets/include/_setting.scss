@@ -15,3 +15,8 @@ $base-font-family: 'Lato','ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro'
 $base-line-height: 1.5em;
 $base-link-color:#00a8bd;
 $point-color:#00a8bd;
+
+
+// プリフィックス解除
+$experimental-support-for-opera:false;
+$experimental-support-for-microsoft:false;

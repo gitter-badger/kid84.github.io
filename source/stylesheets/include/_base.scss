@@ -24,3 +24,11 @@ ul,
 li{
     list-style: none;
 }
+::-moz-selection{
+    background: $point-color;
+    color: #fff;
+}
+::selection{
+    background: $point-color;
+    color: #fff;
+}

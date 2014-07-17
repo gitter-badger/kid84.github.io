@@ -1,19 +1,15 @@
 @import 'compass';
-@import './include/normalize';
+@import 'compass/reset';
+// @import './include/normalize';
 @import './include/setting';
 @import './include/base';
+@import './include/module';
 @import './include/layout';
-// @import './include/module';
-// @import 'plugin/button';
-//@import './plugin/zurui';
+
 @mixin zurui-box($shadow:0.15){
 	@include box-shadow(rgba(0,0,0,$shadow)0 0 2px);
 }
-%clearfix:after {
-  content: "";
-  clear: both;
-  display: block;
-}
+
 .container{
 	width: 960px;
 	margin: 0 auto;
@@ -25,10 +21,6 @@
 h1{
 	font-size: 30px;
 }
-h2{
-	border-left: 5px solid #666;
-	padding-left: 5px;
-}
 #canvasContainer{
 	width: 100%;
 	height: 100%;
@@ -37,7 +29,16 @@ h2{
 	position: fixed;
 }
 
+
+//
+#main {
+	margin-top: 20px;
+}
 //blog
+.page-title{
+	font-size: 22px;
+	margin-bottom: 10px;
+}
 .post{
 	@extend %clearfix:after;
 	@include box-sizing(border-box);
@@ -47,4 +48,41 @@ h2{
 	padding: 20px;
 	width: 100%;
 	background: #fff;
+	.blog-title,
+	.blog-title a{
+		color: $base-color;
+		font-size: 20px;
+		&:hover{
+			text-decoration: none;
+			color: $point-color;
+			@include animBase;
+		}
+	}
+	.date{
+		color: #888;
+		font-size: 12px;
+	}
+	article{
+		margin-top: 20px;
+	}
+}
+
+//about
+.about-me{
+	margin-top: 70px;
+	img{
+		@include box-sizing(border-box);
+		@include border-radius(100%);
+		width: 100px;
+		border: 3px solid $point-color;
+		&:hover{
+			@include animBase;
+			// @include scale(1.05);
+			@include rotate(-360deg);
+			overflow: hidden;
+		}
+	}
+	p{
+		margin-top: 10px;
+	}
 }
