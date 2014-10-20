@@ -89,6 +89,9 @@ set :js_dir, 'javascripts'
 
 set :images_dir, 'images'
 
+set :haml, { :ugly => true, :format => :html5 }
+set :slim, { :ugly => true, :format => :html5 }
+
 # Build-specific configuration
 configure :build do
   # For example, change the Compass output style for deployment
@@ -109,6 +112,7 @@ end
 
 
 set :haml, { :ugly => true, :format => :html5 }
+set :slim, { :ugly => true, :format => :html5 }
 
 # Autoprefixer
 activate :autoprefixer, browsers: ['last 2 versions', 'ie 9']
