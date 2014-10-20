@@ -6,8 +6,16 @@
     <meta content='width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0' name='viewport'>
     <title>kid84<%= ' - ' + current_article.title unless current_article.nil? %></title>
     <%= feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
+<<<<<<< HEAD
     <%= stylesheet_link_tag 'style' %>
     <%= javascript_include_tag 'jquery-2.1.0.min','processing','script','anim','test' %>
+=======
+    <script src="javascripts/jquery-2.1.0.min.js"></script>
+    <script src="javascripts/processing.js"></script>
+    <script src="javascripts/run_prettify.js"></script>
+    <script src="javascripts/script.js"></script>
+    <%= javascript_include_tag 'jquery-2.1.0.min','processing','run_prettify','script','anim' %>
+>>>>>>> 43bb39bbdbc7e2a89be7648a5fa378df233384be
     
     <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -17,7 +25,17 @@
     ga('create', 'UA-52928277-1', 'auto');
     ga('send', 'pageview');
     </script>
+<<<<<<< HEAD
     <!-- <link rel="stylesheet" href="stylesheets/style.css"> -->
+=======
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <script type="text/javascript">
+    $(function(){
+      $('pre, code').addClass('prettyprint linenums');
+      prettyPrint();
+      });
+    </script>
+>>>>>>> 43bb39bbdbc7e2a89be7648a5fa378df233384be
   </head>
   <body>
     <div class="container">
