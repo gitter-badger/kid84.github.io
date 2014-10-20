@@ -31,8 +31,8 @@ activate :blog do |blog|
   blog.page_link = "page/{num}"
 end
 
-# page "/feed.xml", layout: false
-page "blog/*", :layout => :post
+page "/feed.xml", layout: false
+# page "blog/*", :layout => :post
 
 ###
 # Compass
@@ -120,6 +120,6 @@ activate :autoprefixer, browsers: ['last 2 versions', 'ie 9']
 activate :deploy do |deploy|
   # deploy.build_before = true
   deploy.method = :git
-  deploy.branch = "gh-pages"
-  # deploy.branch = "master"
-end 
+  #deploy.branch = "gh-pages"
+  deploy.branch = "master"
+end

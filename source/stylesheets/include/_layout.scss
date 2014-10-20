@@ -1,6 +1,8 @@
 //header
 header{
 	@include clearfix;
+    width: $wrapper-width;
+    margin: 0 auto;
 	h1{
 		float: left;
 	}

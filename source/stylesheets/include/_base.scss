@@ -6,6 +6,9 @@ body{
     line-height: $base-line-height;
     width: 100%;
     border-top: 5px solid $point-color;
+    overflow: auto;
+    position: relative;
+    z-index: 1;
 }
 a {
     color: $base-link-color;
@@ -23,4 +26,12 @@ label {
 ul,
 li{
     list-style: none;
+}
+::-moz-selection{
+    background: $point-color;
+    color: #fff;
+}
+::selection{
+    background: $point-color;
+    color: #fff;
 }
