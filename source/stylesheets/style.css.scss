@@ -1,0 +1,100 @@
+@import 'compass';
+@import 'compass/reset';
+// @import './include/normalize';
+@import './include/setting';
+@import './include/base';
+@import './include/module';
+@import './include/layout';
+
+@mixin zurui-box($shadow:0.15){
+	@include box-shadow(rgba(0,0,0,$shadow)0 0 2px);
+}
+
+.container{
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	position: fixed;
+	margin: 0 auto;
+	margin-top: 10px;
+	padding: 10px;
+	z-index: 1;
+	@include box-sizing(border-box);
+}
+h1{
+	font-size: 30px;
+}
+// #canvasContainer{
+// 	width: 100%;
+// 	height: 100%;
+// 	margin: 0;
+// 	overflow: hidden;
+// 	position: fixed;
+// }
+canvas{
+	z-index: -1;
+	position: fixed;
+	top: 5px;
+	// margin-left: -10px;
+	// margin-top: -40px;
+
+}
+
+//
+#main {
+	margin: 0 auto;
+	margin-top: 20px;
+	width: $wrapper-width;
+}
+//blog
+.page-title{
+	font-size: 22px;
+	margin-bottom: 10px;
+}
+.post{
+	@extend %clearfix:after;
+	@include box-sizing(border-box);
+	@include border-radius(4px);
+	@include zurui-box;
+	margin-bottom: 20px;
+	padding: 20px;
+	width: 100%;
+	background: #fff;
+	.blog-title,
+	.blog-title a{
+		color: $base-color;
+		font-size: 20px;
+		&:hover{
+			text-decoration: none;
+			color: $point-color;
+			@include animBase;
+		}
+	}
+	.date{
+		color: #888;
+		font-size: 12px;
+	}
+	article{
+		margin-top: 20px;
+	}
+}
+
+//about
+.about-me{
+	margin-top: 70px;
+	img{
+		@include box-sizing(border-box);
+		@include border-radius(100%);
+		width: 100px;
+		border: 3px solid $point-color;
+		&:hover{
+			@include animBase;
+			// @include scale(1.05);
+			@include rotate(-360deg);
+			overflow: hidden;
+		}
+	}
+	p{
+		margin-top: 10px;
+	}
+}
