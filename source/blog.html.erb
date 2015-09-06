@@ -1,0 +1,10 @@
+<h1>Kid84 blog</h1>
+<% page_articles.each_with_index do |article, i|%>
+	<article class="blog-article">
+		<h1><%= article.title%></h1>
+		<section class="blog-content">
+			<%= article.body %>
+		</section>
+		<section class="post-date"><%= article.date.strftime('%b %e %Y')%></section>
+	</article>
+<% end %>
