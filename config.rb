@@ -3,18 +3,16 @@
 ###
 
 # Time.zone = "UTC"
-Time.zone = "Tokyo"
 
 activate :blog do |blog|
   # This will add a prefix to all links, template references and source paths
-  Time.zone = "Tokyo"
-  blog.prefix = "blog"
+  # blog.prefix = "blog"
 
-  blog.permalink = "{year}-{month}-{day}-{title}.html"
+  # blog.permalink = "{year}/{month}/{day}/{title}.html"
   # Matcher for blog source files
   # blog.sources = "{year}-{month}-{day}-{title}.html"
-  blog.taglink = "tags/{tag}.html"
-  blog.layout = "layouts/post"
+  # blog.taglink = "tags/{tag}.html"
+  # blog.layout = "layout"
   # blog.summary_separator = /(READMORE)/
   # blog.summary_length = 250
   # blog.year_link = "{year}.html"
@@ -26,25 +24,21 @@ activate :blog do |blog|
   blog.calendar_template = "calendar.html"
 
   # Enable pagination
-  blog.paginate = true
-  blog.per_page = 5
-  blog.page_link = "page/{num}"
+  # blog.paginate = true
+  # blog.per_page = 10
+  # blog.page_link = "page/{num}"
 end
 
-
 page "/feed.xml", layout: false
-# page "blog/*", :layout => :post
 
 ###
 # Compass
 ###
 
 # Change Compass configuration
-compass_config do |config|
-  # config.output_style = :compact
-  config.output_style = :compressed
-  config.line_comments = false
-end
+# compass_config do |config|
+#   config.output_style = :compact
+# end
 
 ###
 # Page options, layouts, aliases and proxies
@@ -53,10 +47,10 @@ end
 # Per-page layout changes:
 #
 # With no layout
-# page "/path/to/file.html", :layout => false
+# page "/path/to/file.html", layout: false
 #
 # With alternative layout
-# page "/path/to/file.html", :layout => :otherlayout
+# page "/path/to/file.html", layout: :otherlayout
 #
 # A path which all have the same layout
 # with_layout :admin do
@@ -64,8 +58,8 @@ end
 # end
 
 # Proxy pages (http://middlemanapp.com/basics/dynamic-pages/)
-# proxy "/this-page-has-no-template.html", "/template-file.html", :locals => {
-#  :which_fake_page => "Rendering a fake page with a local variable" }
+# proxy "/this-page-has-no-template.html", "/template-file.html", locals: {
+#  which_fake_page: "Rendering a fake page with a local variable" }
 
 ###
 # Helpers
@@ -75,8 +69,7 @@ end
 # activate :automatic_image_sizes
 
 # Reload the browser automatically whenever files change
-activate :livereload
-# activate :directory_indexes
+# activate :livereload
 
 # Methods defined in the helpers block are available in templates
 # helpers do
@@ -91,13 +84,10 @@ set :js_dir, 'javascripts'
 
 set :images_dir, 'images'
 
-set :haml, { :ugly => true, :format => :html5 }
-set :slim, { :ugly => true, :format => :html5 }
-
 # Build-specific configuration
 configure :build do
   # For example, change the Compass output style for deployment
-  activate :minify_css
+  # activate :minify_css
 
   # Minify Javascript on build
   # activate :minify_javascript
@@ -106,22 +96,8 @@ configure :build do
   # activate :asset_hash
 
   # Use relative URLs
-  activate :relative_assets
+  # activate :relative_assets
 
   # Or use a different image path
   # set :http_prefix, "/Content/images/"
-end
-
-
-set :haml, { :ugly => true, :format => :html5 }
-set :slim, { :ugly => true, :format => :html5 }
-
-# Autoprefixer
-activate :autoprefixer, browsers: ['last 2 versions', 'ie 9']
-
-activate :deploy do |deploy|
-  # deploy.build_before = true
-  deploy.method = :git
-  #deploy.branch = "gh-pages"
-  deploy.branch = "master"
 end

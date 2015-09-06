@@ -1,15 +1,7 @@
-w
+---
+title: Example Article
+date: 2012-01-01
+tags: example
+---
 
-とりあえずはじめてみるの巻
-
-
-# h1
-
-## test
-
-### h3
-
-* ul
-	- li
-	- li
-	- li
+This is an example article. You probably want to delete it and write your own articles!

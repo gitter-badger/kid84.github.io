@@ -1,8 +1,0 @@
----
-title: First Blog
-date: 2014-05-17
-tags: blog
----
-
-
-middleman + Github Pagesでブログリスタート
